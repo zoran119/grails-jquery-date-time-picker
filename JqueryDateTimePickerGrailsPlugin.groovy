@@ -41,7 +41,7 @@ Brief summary/description of the plugin.
     }
 
     def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
+        "jqueryDateTimePickerEditorRegistrar"(org.grails.plugins.jquerydatetimepicker.JqueryDateTimePickerEditorRegistrar)
     }
 
     def doWithDynamicMethods = { ctx ->
