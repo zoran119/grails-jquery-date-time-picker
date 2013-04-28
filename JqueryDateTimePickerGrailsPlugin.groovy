@@ -1,8 +1,8 @@
 class JqueryDateTimePickerGrailsPlugin {
     // the plugin version
-    def version = "0.1"
+    def version = "0.1.0"
     // the version or versions of Grails the plugin is designed for
-    def grailsVersion = "2.2 > *"
+    def grailsVersion = "2.0 > *"
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
         "grails-app/views/error.gsp"
@@ -10,10 +10,10 @@ class JqueryDateTimePickerGrailsPlugin {
 
     // TODO Fill in these fields
     def title = "Jquery Date Time Picker Plugin" // Headline display name of the plugin
-    def author = "Your name"
-    def authorEmail = ""
+    def author = "Zoran Stojakovic"
+    def authorEmail = "stojakovic.zoran+grails@gmail.com"
     def description = '''\
-Brief summary/description of the plugin.
+Makes it easy to use jQuery date and time pickers.
 '''
 
     // URL to the plugin's documentation
