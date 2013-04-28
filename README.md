@@ -44,7 +44,7 @@ picker popup. Needless to say, you want these to be the same (in terms of the da
 configuration mechanisms each needs to be specified separately (for example, month in `java` is `MM` but in `picker` it
 is `mm`). Here are some resources to help with formatting:
 
-* [Java](http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html
+* [Java](http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html)
 * [picker Date](http://api.jqueryui.com/datepicker/#utility-formatDate)
 * [picker Time](http://trentrichardson.com/examples/timepicker/)
 
