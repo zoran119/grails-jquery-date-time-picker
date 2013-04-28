@@ -6,20 +6,37 @@ class JqueryDateTimePickerTagLib {
 
     def grailsApplication
 
-    private def popup = { function,valueFormat,attrs,body ->
-        def datepickerDateFormat = grailsApplication.config.jqueryDateTimePicker.format.picker.date ?: 'dd/mm/yy'
-        def datepickerTimeFormat = grailsApplication.config.jqueryDateTimePicker.format.picker.time ?: 'HH:mm'
-        out << render(template: '/popup', plugin: 'jqueryDateTimePicker', model: [function: function, value: attrs.value, valueFormat: valueFormat, datepickerDateFormat: datepickerDateFormat, datepickerTimeFormat: datepickerTimeFormat, name: attrs.name])
-    }
-
     def time = { attrs,body ->
-        def valueFormat = grailsApplication.config.jqueryDateTimePicker.format.java.datetime ?: 'dd/MM/yyyy HH:mm'
+        def valueFormat = grailsApplication.config.jqueryDateTimePicker.format.java.datetime ?: "dd/MM/yyyy HH:mm"
         popup('datetimepicker', valueFormat, attrs, body)
     }
 
     def date = { attrs,body ->
-        def valueFormat = grailsApplication.config.jqueryDateTimePicker.format.java.date ?: 'dd/MM/yyyy'
+        def valueFormat = grailsApplication.config.jqueryDateTimePicker.format.java.date ?: "dd/MM/yyyy"
         popup('datepicker', valueFormat, attrs, body)
+    }
+
+    private def popup = { function,valueFormat,attrs,body ->
+        def value = attrs.remove('value')
+        def name = attrs.remove('name')
+        def id = attrs.remove('id') ?: name
+        def pickerOptions = attrs.remove('pickerOptions') ?: [:]
+        pickerOptions.dateFormat = grailsApplication.config.jqueryDateTimePicker.format.picker.date ?: "'dd/mm/yy'"
+        pickerOptions.timeFormat = grailsApplication.config.jqueryDateTimePicker.format.picker.time ?: "'HH:mm'"
+        out << render(template: '/popup', plugin: 'jqueryDateTimePicker', model: [function: function, value: value, valueFormat: valueFormat, name: name, id: id, pickerOptions: formatPickerOptions(pickerOptions), attrs: formatAttributes(attrs)])
+    }
+
+    private def formatAttributes(attributeMap) {
+        def attrStr = ''
+        attributeMap.each { k,v ->
+            attrStr += "${k}=\"${v.encodeAsHTML()}\""
+        }
+        attrStr
+    }
+
+    private def formatPickerOptions(optionsMap) {
+        def optionsStr = optionsMap.toString()
+        optionsStr.substring(1, optionsStr.length()-1)
     }
 
 }

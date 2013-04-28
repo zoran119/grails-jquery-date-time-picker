@@ -1,8 +1,7 @@
 <r:require module="${function=='datepicker' ? 'jquery-ui' : 'timepicker'}" />
 <g:javascript>
-    $('#${name}').${function}({
-        dateFormat: "${datepickerDateFormat}",
-        timeFormat: "${datepickerTimeFormat}"
+    $('#${id}').${function}({
+        ${pickerOptions}
     });
 </g:javascript>
-<g:textField name="${name}" value="${formatDate(date:value, format:valueFormat)}" />
+<input type="text" name="${name}" id="${id}" <g:if test="${value}">value="${formatDate(date:value, format:valueFormat)}"</g:if> ${attrs} />
