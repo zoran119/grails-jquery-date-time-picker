@@ -7,7 +7,7 @@ class JqueryDateTimePickerGrailsPlugin {
     def author = "Zoran Stojakovic"
     def authorEmail = "stojakovic.zoran+grails@gmail.com"
     def description = 'Makes it easy to use jQuery date and time pickers.'
-    def documentation = "http://grails.org/plugin/jquery-date-time-picker"
+    def documentation = "https://github.com/zoran119/grails-jquery-date-time-picker"
 
     def license = 'APACHE'
     def issueManagement = [system: 'GitHub', url: 'https://github.com/zoran119/grails-jquery-date-time-picker/issues']
