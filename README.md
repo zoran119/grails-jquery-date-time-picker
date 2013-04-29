@@ -8,15 +8,15 @@ parameter binding.
 Installation
 ------------
 
-Add the following to the `plugins` part of `BuildConfig.groovy`:
+Install [jQuery UI resources plugin](http://grails.org/plugin/jquery-ui) and then add the following to the `plugins`
+part of `BuildConfig.groovy`:
 
     compile ':jquery-date-time-picker:0.1.0'
 
 Usage
 -----
 
-Install [jQuery UI resources plugin](http://grails.org/plugin/jquery-ui), followed by this plugin. Then simply use the
-provided tags on the properties of `Date` type:
+Simply use the provided tags on the properties of `Date` type:
 
     <jqueryPicker:date name="dateOfBirth" value="personInstance.dateOfBirth" />
     <jqueryPicker:time name="startTime" value="meetingInstance.startTime" />
