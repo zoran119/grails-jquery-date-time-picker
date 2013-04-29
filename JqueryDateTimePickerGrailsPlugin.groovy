@@ -9,6 +9,10 @@ class JqueryDateTimePickerGrailsPlugin {
     def description = 'Makes it easy to use jQuery date and time pickers.'
     def documentation = "http://grails.org/plugin/jquery-date-time-picker"
 
+    def license = 'APACHE'
+    def issueManagement = [system: 'GitHub', url: 'https://github.com/zoran119/grails-jquery-date-time-picker/issues']
+    def scm = [url: 'https://github.com/zoran119/grails-jquery-date-time-picker']
+
     def doWithSpring = {
         jqueryDateTimePickerEditorRegistrar(JqueryDateTimePickerEditorRegistrar)
     }
