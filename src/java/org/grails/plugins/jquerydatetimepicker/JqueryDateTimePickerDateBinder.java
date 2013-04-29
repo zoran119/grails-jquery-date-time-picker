@@ -11,7 +11,7 @@ public class JqueryDateTimePickerDateBinder extends PropertyEditorSupport {
 
     private final List<String> formats;
 
-    public JqueryDateTimePickerDateBinder(List formats) {
+    public JqueryDateTimePickerDateBinder(List<?> formats) {
         List<String> formatList = new ArrayList<String>(formats.size());
         for (Object format : formats) {
             formatList.add(format.toString()); // Force String values (eg. for GStrings)
@@ -21,16 +21,19 @@ public class JqueryDateTimePickerDateBinder extends PropertyEditorSupport {
 
     @Override
     public void setAsText(String s) throws IllegalArgumentException {
-        if (s != null)
-            for (String format : formats) {
-                // Need to create the SimpleDateFormat every time, since it's not thead-safe
-                SimpleDateFormat df = new SimpleDateFormat(format);
-                try {
-                    setValue(df.parse(s));
-                    return;
-                } catch (ParseException e) {
-                    // Ignore
-                }
+        if (s == null) {
+            return;
+        }
+
+        for (String format : formats) {
+            // Need to create the SimpleDateFormat every time, since it's not thead-safe
+            SimpleDateFormat df = new SimpleDateFormat(format);
+            try {
+                setValue(df.parse(s));
+                return;
+            } catch (ParseException e) {
+                // Ignore
             }
+        }
     }
 }

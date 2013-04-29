@@ -1,29 +1,29 @@
 package org.grails.plugins.jquerydatetimepicker;
 
+import java.util.Arrays;
+import java.util.Date;
+
+import org.codehaus.groovy.grails.commons.GrailsApplication;
+import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware;
 import org.springframework.beans.PropertyEditorRegistrar;
 import org.springframework.beans.PropertyEditorRegistry;
 
-import grails.util.GrailsConfig;
-import java.util.Date;
-import java.util.List;
-import java.util.ArrayList;
+public class JqueryDateTimePickerEditorRegistrar implements PropertyEditorRegistrar, GrailsApplicationAware {
 
-public class JqueryDateTimePickerEditorRegistrar implements PropertyEditorRegistrar {
+    private GrailsApplication grailsApplication;
+
     public void registerCustomEditors(PropertyEditorRegistry reg) {
-        String timeFormat = GrailsConfig.get("datePicker.format.java.datetime", String.class);
-        if (timeFormat == null) {
-            timeFormat = "dd/MM/yyyy HH:mm";
-        }
+        String timeFormat = get("datePicker.format.java.datetime", "dd/MM/yyyy HH:mm");
+        String dateFormat = get("datePicker.format.java.date", "dd/MM/yyyy");
+        reg.registerCustomEditor(Date.class, new JqueryDateTimePickerDateBinder(Arrays.asList(timeFormat, dateFormat)));
+    }
 
-        String dateFormat = GrailsConfig.get("datePicker.format.java.date", String.class);
-        if (dateFormat == null) {
-            dateFormat = "dd/MM/yyyy";
-        }
+    private String get(String key, String defaultIfNotSet) {
+        Object value = grailsApplication.getFlatConfig().get(key);
+        return (value instanceof CharSequence) ? value.toString() : defaultIfNotSet;
+    }
 
-        List<String> formats = new ArrayList<String>();
-        formats.add(timeFormat);
-        formats.add(dateFormat);
-
-        reg.registerCustomEditor(Date.class, new JqueryDateTimePickerDateBinder(formats));
+    public void setGrailsApplication(GrailsApplication grailsApplication) {
+        this.grailsApplication = grailsApplication;
     }
 }

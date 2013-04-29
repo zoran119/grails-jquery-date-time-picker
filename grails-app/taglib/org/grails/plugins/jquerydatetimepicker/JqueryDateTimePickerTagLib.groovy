@@ -16,7 +16,7 @@ class JqueryDateTimePickerTagLib {
         popup('datepicker', valueFormat, attrs, body)
     }
 
-    private def popup = { function,valueFormat,attrs,body ->
+    private popup = { function,valueFormat,attrs,body ->
         def value = attrs.remove('value')
         def name = attrs.remove('name')
         def id = attrs.remove('id') ?: name
@@ -26,7 +26,7 @@ class JqueryDateTimePickerTagLib {
         out << render(template: '/popup', plugin: 'jqueryDateTimePicker', model: [function: function, value: value, valueFormat: valueFormat, name: name, id: id, pickerOptions: formatPickerOptions(pickerOptions), attrs: formatAttributes(attrs)])
     }
 
-    private def formatAttributes(attributeMap) {
+    private formatAttributes(attributeMap) {
         def attrStr = ''
         attributeMap.each { k,v ->
             attrStr += "${k}=\"${v.encodeAsHTML()}\""
@@ -34,7 +34,7 @@ class JqueryDateTimePickerTagLib {
         attrStr
     }
 
-    private def formatPickerOptions(optionsMap) {
+    private formatPickerOptions(optionsMap) {
         def optionsStr = optionsMap.toString()
         optionsStr.substring(1, optionsStr.length()-1)
     }
