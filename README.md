@@ -5,6 +5,13 @@ This plugin aims to make it easy to use jQuery [date picker](http://jqueryui.com
 picker](https://github.com/trentrichardson/jQuery-Timepicker-Addon). It will set up the picker popups and configure date
 parameter binding.
 
+Installation
+------------
+
+Add the following to the `plugins` part of `BuildConfig.groovy`:
+
+    compile ':jquery-date-time-picker:0.1.0'
+
 Usage
 -----
 
