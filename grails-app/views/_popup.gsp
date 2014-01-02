@@ -1,3 +1,4 @@
+<%@page defaultCodec="none" %>
 <r:require module="${function=='datepicker' ? 'jquery-ui' : 'timepicker'}" />
 <g:javascript>
     $('#${id}').${function}({
