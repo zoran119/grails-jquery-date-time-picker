@@ -58,6 +58,12 @@ is `mm`). Here are some resources to help with formatting:
 Note that the `picker` property has `date` and `time` where as `java` has `datetime` and `time`. Also, the `picker`
 property values need to be 'strings inside strings' (see Usage). 
 
+Version History
+---------------
+
+#### 0.1.1
+* Set the page codec to `none` to prevent encoding of single quotes as UTF-8 in `Grails 2.3.x` ([pull request #4](https://github.com/zoran119/grails-jquery-date-time-picker/pull/4))
+
 
 Contributing
 ------------
