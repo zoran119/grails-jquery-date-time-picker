@@ -1,7 +1,9 @@
 <%@page defaultCodec="none" %>
 <r:require module="${function=='datepicker' ? 'jquery-ui' : 'timepicker'}" />
+<g:set var="inputId" value="${id.replace('.', '\\\\.').replace('[','\\\\[').replace(']', '\\\\]')}" />
+${inputId}
 <g:javascript>
-    $('#${id}').${function}({
+    $('#${inputId}').${function}({
         ${pickerOptions}
     });
 </g:javascript>
