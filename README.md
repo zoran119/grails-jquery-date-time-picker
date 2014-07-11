@@ -61,6 +61,9 @@ property values need to be 'strings inside strings' (see Usage).
 Version History
 ---------------
 
+#### 0.1.3
+* Version 0.1.2 accidentally left debug code in which prints input name to the gsp page. This version removes the output.
+
 #### 0.1.2
 * Escape dots and square brackets in input names ([issue #6](https://github.com/zoran119/grails-jquery-date-time-picker/issues/6))
 
