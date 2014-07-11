@@ -18,12 +18,12 @@ Usage
 
 Simply use the provided tags on the properties of `Date` type:
 
-    <jqueryPicker:date name="dateOfBirth" value="personInstance.dateOfBirth" />
-    <jqueryPicker:time name="startTime" value="meetingInstance.startTime" />
+    <jqueryPicker:date name="dateOfBirth" value="${personInstance.dateOfBirth}" />
+    <jqueryPicker:time name="startTime" value="${meetingInstance.startTime}" />
 
 You can pass configuration options to to date and time picker using `pickerOptions` map:
 
-    <jqueryPicker:date name="dateOfBirth" value="personInstance.dateOfBirth" pickerOptions="[maxDate: '\'+1M +10D\'']" />
+    <jqueryPicker:date name="dateOfBirth" value="${personInstance.dateOfBirth}" pickerOptions="[maxDate: '\'+1M +10D\'']" />
 
 Note that if an option is a string, pass it as string (note the `'\'`). Take care as none of the options are encoded!
 
