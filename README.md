@@ -61,6 +61,9 @@ property values need to be 'strings inside strings' (see Usage).
 Version History
 ---------------
 
+#### 0.1.2
+* Escape dots and square brackets in input names ([issue #6](https://github.com/zoran119/grails-jquery-date-time-picker/issues/6))
+
 #### 0.1.1
 * Set the page codec to `none` to prevent encoding of single quotes as UTF-8 in `Grails 2.3.x` ([pull request #4](https://github.com/zoran119/grails-jquery-date-time-picker/pull/4))
 
