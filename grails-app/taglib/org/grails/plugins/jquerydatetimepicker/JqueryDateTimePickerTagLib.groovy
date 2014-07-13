@@ -21,9 +21,10 @@ class JqueryDateTimePickerTagLib {
         def name = attrs.remove('name')
         def id = attrs.remove('id') ?: name
         def pickerOptions = attrs.remove('pickerOptions') ?: [:]
+        def timeZone = attrs.remove('timeZone')
         pickerOptions.dateFormat = grailsApplication.config.jqueryDateTimePicker.format.picker.date ?: "'dd/mm/yy'"
         pickerOptions.timeFormat = grailsApplication.config.jqueryDateTimePicker.format.picker.time ?: "'HH:mm'"
-        out << render(template: '/popup', plugin: 'jqueryDateTimePicker', model: [function: function, value: value, valueFormat: valueFormat, name: name, id: id, pickerOptions: formatPickerOptions(pickerOptions), attrs: formatAttributes(attrs)])
+        out << render(template: '/popup', plugin: 'jqueryDateTimePicker', model: [function: function, value: value, valueFormat: valueFormat, name: name, id: id, pickerOptions: formatPickerOptions(pickerOptions), timeZone: timeZone, attrs: formatAttributes(attrs)])
     }
 
     private formatAttributes(attributeMap) {

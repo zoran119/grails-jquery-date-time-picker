@@ -6,4 +6,4 @@
         ${pickerOptions}
     });
 </g:javascript>
-<input type="text" name="${name}" id="${id}" <g:if test="${value}">value="${formatDate(date:value, format:valueFormat)}"</g:if> ${attrs} />
+<input type="text" name="${name}" id="${id}" <g:if test="${value}">value="${formatDate(date:value, format:valueFormat, timeZone:timeZone)}"</g:if> ${attrs} />

@@ -27,6 +27,10 @@ You can pass configuration options to to date and time picker using `pickerOptio
 
 Note that if an option is a string, pass it as string (note the `'\'`). Take care as none of the options are encoded!
 
+You can also specify the timezone to be used when displaying a date:
+
+    <jqueryPicker:time name="startTime" value="${meetingInstance.startTime}" timeZone="${TimeZone.getTimeZone('GMT')}" />
+
 
 Configuration
 -------------
