@@ -65,6 +65,9 @@ property values need to be 'strings inside strings' (see Usage).
 Version History
 ---------------
 
+#### 0.2.0
+* Timezone support ([issue #7](https://github.com/zoran119/grails-jquery-date-time-picker/issues/7))
+
 #### 0.1.3
 * Version 0.1.2 accidentally left debug code in which prints input name to the gsp page. This version removes the output.
 

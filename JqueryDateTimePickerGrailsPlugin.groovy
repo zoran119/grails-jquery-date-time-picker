@@ -1,7 +1,7 @@
 import org.grails.plugins.jquerydatetimepicker.JqueryDateTimePickerEditorRegistrar
 
 class JqueryDateTimePickerGrailsPlugin {
-    def version = "0.1.3"
+    def version = "0.2.0"
     def grailsVersion = "2.0 > *"
     def title = "Jquery Date Time Picker Plugin"
     def author = "Zoran Stojakovic"
