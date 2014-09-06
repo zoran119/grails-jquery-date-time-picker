@@ -11,7 +11,7 @@ Installation
 Install [jQuery UI resources plugin](http://grails.org/plugin/jquery-ui) and then add the following to the `plugins`
 part of `BuildConfig.groovy`:
 
-    compile ':jquery-date-time-picker:0.1.0'
+    compile ':jquery-date-time-picker:0.2.0'
 
 Usage
 -----
