@@ -13,8 +13,8 @@ public class JqueryDateTimePickerEditorRegistrar implements PropertyEditorRegist
     private GrailsApplication grailsApplication;
 
     public void registerCustomEditors(PropertyEditorRegistry reg) {
-        String timeFormat = get("datePicker.format.java.datetime", "dd/MM/yyyy HH:mm");
-        String dateFormat = get("datePicker.format.java.date", "dd/MM/yyyy");
+        String timeFormat = get("jqueryDateTimePicker.format.java.datetime", "dd/MM/yyyy HH:mm");
+        String dateFormat = get("jqueryDateTimePicker.format.java.date", "dd/MM/yyyy");
         reg.registerCustomEditor(Date.class, new JqueryDateTimePickerDateBinder(Arrays.asList(timeFormat, dateFormat)));
     }
 
